@@ -2,7 +2,9 @@ name: Build
 
 
 on:
+
 workflows_call
+
     push:
         branches:
             - main
