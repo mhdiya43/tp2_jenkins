@@ -1,10 +1,6 @@
 name: Deploy
 
 on:
-    workflow_run:
-    workflows: ["Build"]
-    types:
-      - completed
     push:
         branches:
             - main
@@ -13,6 +9,15 @@ on:
             - main
 
 jobs:
+
+build:
+    needs:./.github/workflows/build.yml
+    
+test:
+    needs:needs:./.github/workflows/test.yml
+
+deploy:
+    needs:needs:./.github/workflows/deploy.yml
 
     deploy:
         runs-on: ubuntu-latest
