@@ -1,19 +1,10 @@
 name: Test
 
 on:
-  workflow_run:
-    workflows: ["Deploy"]
-    types:
-      - completed
-    push:
-        branches:
-            - main
-    pull_request:
-        branches:
-            - main
+    workflow_call:
 
 jobs:
-    Test:
+    test:
         runs-on: ubuntu-latest
 
         steps:
@@ -29,12 +20,3 @@ jobs:
 
             - name: Run tests
               run: mvn test
-
-            - name: Package application
-              run: mvn package -DskipTests
-
-            - name: Upload artifact
-              uses: actions/upload-artifact@v4
-              with:
-                  name: calculator-jar
-                  path: target/*.jar
