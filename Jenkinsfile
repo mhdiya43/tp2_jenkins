@@ -2,7 +2,7 @@ pipeline {
     agent any
 //comt
     stages {
-
+//comts
         stage('Checkout') {
             steps {
                 git branch: 'main',
