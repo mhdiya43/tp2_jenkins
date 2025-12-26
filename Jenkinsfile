@@ -65,8 +65,7 @@ pipeline {
                     }
                 }
             }
-            //hello
-
+            //ok
     post {
         success {
             echo "✅ Déploiement local terminé avec succès"
