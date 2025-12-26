@@ -35,7 +35,10 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                bat 'docker build -t %IMAGE_NAME% .'
+                bat '''
+                docker rmi %IMAGE_NAME% || exit 0
+                docker build -t %IMAGE_NAME% .
+                '''
             }
         }
 
@@ -56,7 +59,7 @@ pipeline {
 
     post {
         success {
-            echo "✅ Déploiement local terminé"
+            echo "✅ Déploiement local terminé avec succès"
         }
         failure {
             echo "❌ Erreur dans le pipeline"
