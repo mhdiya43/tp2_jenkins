@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.CalculTest" time="0.062" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.CalculTest" time="0.056" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="FR"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-17.0.15.6-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\mahdi\AppData\Local\Temp\surefire1566548634641189418\surefirebooter-20251219105621185_3.jar C:\Users\mahdi\AppData\Local\Temp\surefire1566548634641189418 2025-12-19T10-56-18_766-jvmRun1 surefire-20251219105621185_1tmp surefire_0-20251219105621185_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\mahdi\AppData\Local\Temp\surefire8187684843441987781\surefirebooter-20251226142305084_3.jar C:\Users\mahdi\AppData\Local\Temp\surefire8187684843441987781 2025-12-26T14-23-04_918-jvmRun1 surefire-20251226142305084_1tmp surefire_0-20251226142305084_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\mahdi\OneDrive\Bureau\java\TP1GIT\tp2_jenkins\target\test-classes;C:\Users\mahdi\OneDrive\Bureau\java\TP1GIT\tp2_jenkins\target\classes;C:\Users\mahdi\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\mahdi\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\mahdi\AppData\Local\Temp\surefire1566548634641189418\surefirebooter-20251219105621185_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\mahdi\AppData\Local\Temp\surefire8187684843441987781\surefirebooter-20251226142305084_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.15+6"/>
@@ -50,7 +50,7 @@
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="native.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-17.0.15.6-hotspot\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;c:\Users\mahdi\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;c:\Users\mahdi\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\copilotCli;C:\Python314\Scripts\;C:\Python314\;C:\Program Files\Eclipse Adoptium\jdk-17.0.15.6-hotspot\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\xampp\php;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Go\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Users\mahdi\Downloads\apache-maven-3.9.12\bin;C:\Users\mahdi\AppData\Local\Microsoft\WindowsApps;;C:\Users\mahdi\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\mahdi\AppData\Roaming\npm;c:\Users\mahdi\.vscode\extensions\vscjava.vscode-java-debug-0.58.4\bundled\scripts\noConfigScripts;."/>
+    <property name="java.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-17.0.15.6-hotspot\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;c:\Users\mahdi\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;c:\Users\mahdi\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\copilotCli;C:\Python314\Scripts\;C:\Python314\;C:\Program Files\Eclipse Adoptium\jdk-17.0.15.6-hotspot\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\xampp\php;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Go\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Users\mahdi\Downloads\apache-maven-3.9.12\bin;C:\ngrok;C:\Users\mahdi\AppData\Local\Microsoft\WindowsApps;;C:\Users\mahdi\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\mahdi\AppData\Roaming\npm;c:\Users\mahdi\.vscode\extensions\vscjava.vscode-java-debug-0.58.4\bundled\scripts\noConfigScripts;."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="java.vendor" value="Eclipse Adoptium"/>
     <property name="java.vm.version" value="17.0.15+6"/>
