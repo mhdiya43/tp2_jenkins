@@ -57,6 +57,15 @@ pipeline {
         }
     }
 
+    stage('Test Credential') {
+                steps {
+                    withCredentials([string(credentialsId: 'github-token', variable: 'GITHUB_TOKEN')]) {
+                      
+                        bat 'echo Le token récupéré est : %GITHUB_TOKEN%'
+                    }
+                }
+            }
+
     post {
         success {
             echo "✅ Déploiement local terminé avec succès"
