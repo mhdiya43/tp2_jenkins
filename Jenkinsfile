@@ -55,17 +55,17 @@ pipeline {
                 '''
             }
         }
-    }
 
-    stage('Test Credential') {
-                steps {
-                    withCredentials([string(credentialsId: 'github-token', variable: 'GITHUB_TOKEN')]) {
-                      
-                        bat 'echo Le token récupéré est : %GITHUB_TOKEN%'
-                    }
+        
+        stage('Test Credential') {
+            steps {
+                withCredentials([string(credentialsId: 'github-token', variable: 'GITHUB_TOKEN')]) {
+                    bat 'echo Token récupéré mais caché dans les logs'
                 }
             }
-            //ok
+        }
+    }
+
     post {
         success {
             echo "✅ Déploiement local terminé avec succès"
