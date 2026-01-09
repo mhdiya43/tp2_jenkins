@@ -6,6 +6,6 @@ public class Main {
         Calcul calc = new Calcul();
         System.out.println("2 + 3 = " + calc.add(2, 3));
        
-    }
+    }//fff
 }
 
