@@ -2,17 +2,15 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "tp3-java-app:latest"
-        CONTAINER_NAME = "tp3-java-container"
-        HOST_PORT = "8081"
-        CONTAINER_PORT = "8080"
+        SONAR_PROJECT_KEY = "tp4-java-project"
     }
 
     stages {
 
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/mhdiya43/tp2_jenkins.git'
+                git branch: 'main',
+                    url: 'https://github.com/mhdiya43/tp2_jenkins.git'
             }
         }
 
@@ -33,30 +31,7 @@ pipeline {
             }
         }
 
-        stage('Docker Build') {
-            steps {
-                bat '''
-                docker rmi %IMAGE_NAME% || exit 0
-                docker build -t %IMAGE_NAME% .
-                '''
-            }
-        }
-
-        stage('Deploy (Local Docker)') {
-            steps {
-                bat '''
-                docker stop %CONTAINER_NAME% || exit 0
-                docker rm %CONTAINER_NAME% || exit 0
-
-                docker run -d ^
-                  --name %CONTAINER_NAME% ^
-                  -p %HOST_PORT%:%CONTAINER_PORT% ^
-                  %IMAGE_NAME%
-                '''
-            }
-        }
-
-        
+        // ✅ B3 — TEST DU CREDENTIAL GITHUB
         stage('Test Credential') {
             steps {
                 withCredentials([string(credentialsId: 'github-token', variable: 'GITHUB_TOKEN')]) {
@@ -64,14 +39,35 @@ pipeline {
                 }
             }
         }
+
+        // ✅ ANALYSE SONARQUBE
+        stage('SonarQube Analysis') {
+            steps {
+                withSonarQubeEnv('SonarQube') {
+                    bat '''
+                    mvn -B sonar:sonar ^
+                      -Dsonar.projectKey=%SONAR_PROJECT_KEY%
+                    '''
+                }
+            }
+        }
+
+        // ✅ QUALITY GATE (BLOQUE LE PIPELINE)
+        stage('Quality Gate') {
+            steps {
+                timeout(time: 2, unit: 'MINUTES') {
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
     }
 
     post {
         success {
-            echo "✅ Déploiement local terminé avec succès"
+            echo "✅ TP4 réussi : Qualité OK, pipeline validé"
         }
         failure {
-            echo "❌ Erreur dans le pipeline"
+            echo "❌ Pipeline bloqué : tests ou Quality Gate en échec"
         }
     }
 }
